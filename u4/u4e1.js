@@ -4,6 +4,27 @@
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+async function countDown(amount, stepCallback) {
+    
+    if(!stepCallback) {
+        return "ERROR. És obligatori el pas d'un callback com a segon paràmetre."
+    }
+        
+    if (amount <= 0) {
+    return "ERROR. La quantitat ha de ser positiva i més gran que 0."
+    }
+
+    const step = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    for(let countDownValue = amount - 1; countDownValue >= 0; countDownValue--) {
+        stepCallback(countDownValue);
+
+        if(countDownValue > 0) {
+            await step(100)
+        }
+    }
+    return true;
+}
 
 /**
 * TEST
