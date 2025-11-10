@@ -4,6 +4,9 @@
 
 // Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+function conditionalCallback(callback, param) {
+    return !param ? false : callback(param);
+}
 
 /**
 * TEST
