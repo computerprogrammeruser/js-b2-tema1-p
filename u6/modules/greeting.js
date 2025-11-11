@@ -1,13 +1,15 @@
-const GREET_TYPES = {
+import basicEncrypt from './encrypt.js'
+
+export const GREET_TYPES = {
     HI: 'hi',
     BYE: 'bye'
 }
 
-function sayHi(name) {
+export function sayHi(name) {
     return encryptedGreeting(name, GREET_TYPES.HI);
 }
 
-function sayBye(name) {
+export function sayBye(name) {
     return encryptedGreeting(name, GREET_TYPES.BYE);
 }
 
